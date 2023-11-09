@@ -1,0 +1,153 @@
+ #main {
+     height: 100vh;
+     width: 100vw;
+     background-color: white;
+     background: radial-gradient(circle at 100%, #006, #009 30%, #acb 75%, #000 78%);
+
+     /* background: linear-gradient(black);  */
+     /* background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%);  */
+ }
+
+
+ body {
+     margin: 0%;
+     padding: 0%;
+     background-color: black;
+     overflow: hidden;
+ }
+
+ div {
+     position: relative;
+     text-align: center;
+ }
+
+ .stars {
+     border-radius: 50%;
+     box-shadow: white 0px 0px 14px;
+     height: 15px;
+     width: 15px;
+     position: absolute;
+     background-color: red;
+     background: conic-gradient(from 0.5turn at 50% 50%, #fabf, 45deg, #fff0, 90deg, #fabf, 135deg, #fff0, 180deg, #fabf, 225deg, #fff0, 270deg, #fabf, 315deg, #fff0, 360deg, #ffff);
+     transform: translate(500%, 100%);
+ }
+
+ .small {
+     display: block;
+     transform: translate(80%, -50%);
+     /* overflow-x: hidden; */
+ }
+
+ #fan {
+     position: relative;
+     display: flex;
+     flex-wrap: nowrap;
+     /* flex-direction: column; */
+     align-content: space-evenly;
+     height: 50px;
+     width: 500px;
+
+ }
+
+ .wing1 {
+     align-self: center;
+     height: 2rem;
+     width: 30rem;
+     border-radius: 20px 10px 10px 100px;
+     background-color: green;
+ }
+
+ .circle {
+     align-self: center;
+     border-radius: 50%;
+     height: 50px;
+     width: 100px;
+     background-color: black;
+ }
+
+ .wing2 {
+     align-self: center;
+     height: 2rem;
+     width: 30rem;
+     border-radius: 10px 100px 20px 10px;
+     background-color: red;
+ }
+
+ #text {
+     height: 350px;
+     width: 500px;
+     top: 200px;
+     position: relative;
+     display: flex;
+     /* flex-direction: column; */
+     justify-content: center;
+     align-items: center;
+     align-content: space-evenly;
+     font-family: sans-serif;
+ }
+
+ .word_top {
+     position: absolute;
+     top: 50px;
+     left: 100px;
+     opacity: 1;
+     animation: hid 2s infinite;
+ }
+
+ .word_bottom {
+     position: absolute;
+     bottom: 50px;
+     right: 100px;
+     opacity: 1;
+     animation: reveal 2s infinite;
+ }
+
+
+ @keyframes animate {
+     0% {
+         rotate: 0deg;
+         animation-timing-function: linear;
+     }
+
+     100% {
+         rotate: -360deg;
+         animation-timing-function: linear;
+     }
+ }
+
+ @keyframes hid {
+     40% {
+         opacity: 1;
+     }
+
+     50% {
+         opacity: 0;
+     }
+
+     90% {
+         opacity: 0;
+     }
+
+     100% {
+         opacity: 1;
+     }
+ }
+
+ @keyframes reveal {
+
+     40% {
+         opacity: 0;
+     }
+
+     50% {
+         opacity: 1;
+     }
+
+     90% {
+         opacity: 1;
+     }
+
+     100% {
+         opacity: 0;
+     }
+ }
