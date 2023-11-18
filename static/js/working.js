@@ -53,39 +53,72 @@
 //     });
 // });
 
-let up_texts = ["Hello !", "Sandesh", "and", "Never", "give", "up", "gonna", "you", "Never", "run", "and", "you", "gonna", "you", "Never", "say", "Never", "tell", "lie", "hurt"];
-let down_texts = ["I'm", "Bhantana", "I'm", "gonna", "you", "Never", "let", "down", "gonna", "around", "desert", "Never", "make", "cry", "gonna", "goodbye", "gonna", "a", "and", "you"];
+
+let x = [];
+
+let texts = [
+    "Hello !",
+    "I'm",
+    "Sandesh",
+    "Bhantana",
+    "and",
+    "I'm",
+    "Never",
+    "gonna",
+    "give",
+    "you",
+    "up",
+    "Never",
+    "gonna",
+    "let",
+    "you",
+    "down",
+    "Never",
+    "gonna",
+    "run",
+    "around",
+    "and",
+    "desert",
+    "you",
+    "Never",
+    "gonna",
+    "make",
+    "you",
+    "cry",
+    "Never",
+    "gonna",
+    "say",
+    "goodbye",
+    "Never",
+    "gonna",
+    "tell",
+    "a",
+    "lie",
+    "and",
+    "hurt",
+    "you"
+]
 
 
 let counter = 0;
 
 function changeText() {
-    let wordTop = document.querySelector(".word_top h3");
-    let wordBottom = document.querySelector(".word_bottom h3");
-    if (counter % 2 === 0) {
-        wordTop.innerText = up_texts[Math.floor(counter / 2)];
-        wordTop.style.display = "block";
-        wordBottom.style.display = "none";
-    }
-    else {
-        wordBottom.innerText = down_texts[Math.floor(counter / 2)];
-        wordBottom.style.display = "block";
-        wordTop.style.display = "none";
-    }
+    let word = document.querySelector(".word>h3");
+    word.innerText = texts[counter];
+    word.style.display = "block";
     counter++;
 
-    if (counter === up_texts.length || counter === down_texts.length) {
+    if (counter === texts.length) {
         counter = 0;
     }
 }
 
-function j() {
-    setTimeout(f, 0);
-    document.getElementById("fan").style.animation = "animate 2s infinite";
-}
 function f() {
     changeText();
-    setTimeout(f, 1000);
+    setTimeout(f, 5000);
 }
-// setInterval(changeText, 1500);
-document.addEventListener("DOMContentLoaded", j)
+document.addEventListener("DOMContentLoaded", () => {
+    let satellite = document.querySelector(".satellite_container>img");
+    satellite.style.animation = "5s satellite infinite";
+    setTimeout(f, 1200);
+});
