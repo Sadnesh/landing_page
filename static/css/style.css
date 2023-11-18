@@ -18,10 +18,11 @@ body {
 }
 
 .star1 {
-    object-fit:cover;
+    object-fit: cover;
     position: fixed;
     min-height: 100%;
     min-width: 100%;
+    background-image: url(./../images/low_star_background.jpg);
     content: url(./../images/star_background.png);
 }
 
@@ -162,7 +163,7 @@ body {
     position: absolute;
     opacity: 1;
     animation: hid 5s infinite;
-    color:#ffdab9;
+    color: #ffdab9;
 }
 
 @keyframes hid {
