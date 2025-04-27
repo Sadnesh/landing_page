@@ -1,185 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
-    --sh: 85vh;
-    --sw: 80vw;
-    --aspra: 1/1.25;
+  background-color: #121212;
+  color: white;
 }
 
-body {
-    margin: 0px;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 4rem;
+  padding: 10px;
+  gap: 2rem;
 }
 
-.stars_background {
-    display: flex;
-    position: fixed;
-    flex-wrap: wrap;
-    height: 100vh;
-    width: 100vw;
-    max-width: 100%;
+.orbs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
 }
 
-.star1 {
-    object-fit: cover;
-    position: fixed;
-    min-height: 100%;
-    min-width: 100%;
-    background-image: url(./../images/low_star_background.jpg);
-    content: url(./../images/star_background.png);
+.orb1 {
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px #fff, inset 20px 0 60px #2f0c13,
+    inset -20px 0 60px #0ff, inset 20px 0 300px #2f0c13,
+    inset -20px 0 300px #0ff, 0 0 5px #fff, -10px 0 60px #2f0c13,
+    10px 0 60px #0ff;
+  animation: load 2s linear infinite;
+}
+.orb2 {
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px #fff, inset -20px 0 60px #2f0c13,
+    inset 20px 0 60px #0ff, inset -20px 0 300px #2f0c13, inset 20px 0 300px #0ff,
+    0 0 5px #fff, 10px 0 60px #2f0c13, -10px 0 60px #0ff;
+  animation: load 2s linear infinite;
 }
 
-#planet_container {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    min-height: 100vh;
-    max-width: 100%;
-    max-height: 100%;
-    height: 100vh;
-    width: 100vw;
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.planet {
-    height: 100%;
-    width: 100%;
-    max-width: 100%;
-    background: radial-gradient(circle at 100% 100%, #006, #009 25%, #acb 47.5%, #0000 49%);
-    background-repeat: no-repeat;
-    flex: 1;
-    z-index: 1;
+.pupil1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-150%, -50%);
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px #fff, inset 20px 0 60px #2f0c13,
+    inset -20px 0 60px #0ff, inset 20px 0 300px #2f0c13,
+    inset -20px 0 300px #0ff, 0 0 5px #fff, -10px 0 60px #2f0c13,
+    10px 0 60px #0ff;
+  background-color: #fff;
 }
 
-.satellite_container>img {
-    position: fixed;
-    aspect-ratio: var(--aspra);
-    height: 10vh;
+.pupil2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(80%, -50%);
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px #fff, inset 20px 0 60px #2f0c13,
+    inset -20px 0 60px #0ff, inset 20px 0 300px #2f0c13,
+    inset -20px 0 300px #0ff, 0 0 5px #fff, -10px 0 60px #2f0c13,
+    10px 0 60px #0ff;
+  background-color: #fff;
 }
 
-.satellite_container {
-    position: fixed;
-    height: var(--sh);
-    width: var(--sw);
-    overflow: hidden;
-    animation: 5s z_up_down infinite;
-    z-index: 0;
+.detail {
+  margin-top: 1rem;
 }
 
-@keyframes z_up_down {
-    30% {
-        z-index: 0;
-    }
-
-    50% {
-        z-index: 2;
-    }
-
-    95% {
-        z-index: 2;
-    }
+.intro {
+  font-size: 3rem;
+  font-weight: bold;
 }
 
-@keyframes satellite {
-    0% {
-        transform: rotate(180deg);
-        translate: var(--sw) var(--sh);
-        animation-timing-function: cubic-bezier(.75, 0, .25, 1);
-    }
-
-    20% {
-        transform: translate(20%, 20%);
-        transform: rotate(150deg);
-    }
-
-    30% {
-        transform: rotate(135deg);
-        animation-timing-function: cubic-bezier(.75, .25, 1, 1);
-        aspect-ratio: var(--aspra);
-        height: 40vh;
-        translate: 0% 0%;
-    }
-
-    50% {
-        translate: 0% 3%;
-        aspect-ratio: var(--aspra);
-        height: 40vh;
-        animation-timing-function: cubic-bezier(.25, .75, 1, 1);
-    }
-
-    60% {
-        aspect-ratio: var(--aspra);
-        height: 40vh;
-        translate: 0% 7%;
-        animation-timing-function: cubic-bezier(.75, 0, .25, 1);
-    }
-
-
-    95% {
-        transform: rotate(-45deg);
-    }
-
-    100% {
-        translate: calc(var(--sw) + 5vw) calc(var(--sh) + 5vh);
-        animation-timing-function: cubic-bezier(.75, 0, .25, 1);
-    }
-}
-
-@media (min-width:1000px) {
-    :root {
-        --sh: 75vh;
-        --sw: 70vw;
-    }
-}
-
-/* for iphone 12 pro */
-@media (max-width:390px) {
-    :root {
-        --sh: 95vh;
-        --sw: 70vw;
-    }
-}
-
-/* for iphone 14 pro max */
-@media (max-width:430px) {
-    :root {
-        --sh: 95vh;
-        --sw: 70vw;
-    }
-}
-
-.word_container {
-    position: fixed;
-    display: flex;
-    height: var(--sh);
-    width: var(--sw);
-    top: 10%;
-    right: 25%;
-    justify-content: center;
-    align-items: center;
-    font-family: Agbalumo;
-}
-
-.word {
-    font-size: 3em;
-    position: absolute;
-    opacity: 1;
-    animation: hid 5s infinite;
-    color: #ffdab9;
-}
-
-@keyframes hid {
-    19% {
-        opacity: 1;
-    }
-
-    25% {
-        opacity: 0;
-    }
-
-    60% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+#intro-caption{
+    font-size: 2rem;
+    font-style: italic;
+    text-align: center;
 }
